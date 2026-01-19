@@ -186,4 +186,4 @@ MIT — do whatever, just don't actually use these excuses at work.
 
 ---
 
-**Remember:** These are jokes! Don't actually tell your manager that Mercury is in retrograde. 
+**Remember:** These are jokes! Don't actually tell your manager that Mercury is in retrograde. XD
