@@ -1,12 +1,13 @@
-# 🤥 Lies as a Service (LaaS)
+# Lies as a Service (LaaS)
 
 **Base URL:** `https://lies-as-a-service.onrender.com/lie`
+**Example(Category-Wise):** `https://lies-as-a-service.onrender.com/lie?category=tech`
 
 Ever needed a creative excuse to escape a meeting, explain a missed deadline, or justify working from home? This API generates humorous, believable workplace lies and excuses for developers and professionals.
 
 Built with FastAPI, rate limiting, and Docker support.
 
-## 🚀 API Usage
+## API Usage
 
 **Method:** GET  
 **Rate Limit:** 120 requests per minute per IP
@@ -28,7 +29,7 @@ curl https://lies-as-a-service.onrender.com/lie
 
 Use it in apps, bots, landing pages, Slack integrations, or wherever you need a creative excuse!
 
-## 📚 Endpoints
+## Endpoints
 
 ### Get a Random Lie
 ```bash
@@ -82,7 +83,7 @@ Want to run it yourself? It's lightweight and simple.
 ### 1. Clone this repository
 
 ```bash
-git clone https://github.com/your-username/lies-as-a-service.git
+git clone https://github.com/MohammadSameer19/lies-as-a-service
 cd lies-as-a-service
 ```
 
@@ -169,13 +170,6 @@ Check out [CONTRIBUTING.md](CONTRIBUTING.md) for more details.
 
 If you open this repo in GitHub Codespaces, it will automatically use `.devcontainer.json` to set up your environment. If you open it in VS Code, it will ask you if you want to reopen it in a container.
 
-## 🎯 Projects Using Lies as a Service
-
-Here are some projects and websites that creatively integrate lies-as-a-service:
-
-**Your Project Here?**
-
-If you're using lies-as-a-service in your project, open a pull request to be featured here!
 
 ---
 
@@ -191,4 +185,4 @@ MIT — do whatever, just don't actually use these excuses at work.
 
 ---
 
-**Remember:** These are jokes! Don't actually tell your manager that Mercury is in retrograde. 🤥
+**Remember:** These are jokes! Don't actually tell your manager that Mercury is in retrograde. 
