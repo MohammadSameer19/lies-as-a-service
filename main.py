@@ -33,7 +33,7 @@ app.add_middleware(
 )
 
 
-@app.get("/api/lie")
+@app.get("/lie")
 @limiter.limit("120/minute")
 async def get_lie(
     request: Request,
@@ -67,7 +67,7 @@ async def get_lie(
     })
 
 
-@app.get("/api/categories")
+@app.get("/categories")
 @limiter.limit("120/minute")
 async def get_categories(request: Request):
     """

@@ -21,7 +21,7 @@ GET /api/lie
 ### 🔄 Example Request
 
 ```bash
-curl https://your-deployed-url.onrender.com/api/lie
+curl https://your-deployed-url.onrender.com/lie
 ```
 
 ### ✅ Example Response
@@ -35,7 +35,7 @@ curl https://your-deployed-url.onrender.com/api/lie
 
 #### Get a Lie by Category
 ```bash
-GET /api/lie?category=tech
+GET /lie?category=tech
 ```
 
 **Available Categories:**
@@ -50,12 +50,12 @@ GET /api/lie?category=tech
 
 **Example Request:**
 ```bash
-curl https://your-deployed-url.onrender.com/api/lie?category=tech
+curl https://your-deployed-url.onrender.com/lie?category=tech
 ```
 
 #### Get All Categories
 ```bash
-GET /api/categories
+GET /categories
 ```
 
 **Example Response:**
