@@ -1,6 +1,6 @@
 # 🤥 Lies as a Service (LaaS)
 
-**Base URL:** `https://your-deployed-url.onrender.com`
+**Base URL:** `https://lies-as-a-service.onrender.com/lie`
 
 Ever needed a creative excuse to escape a meeting, explain a missed deadline, or justify working from home? This API generates humorous, believable workplace lies and excuses for developers and professionals.
 
@@ -11,17 +11,10 @@ Built with FastAPI, rate limiting, and Docker support.
 **Method:** GET  
 **Rate Limit:** 120 requests per minute per IP
 
-### 🔄 Endpoints
-
-#### Get a Random Lie
-```bash
-GET /api/lie
-```
-
 ### 🔄 Example Request
 
 ```bash
-curl https://your-deployed-url.onrender.com/lie
+curl https://lies-as-a-service.onrender.com/lie
 ```
 
 ### ✅ Example Response
@@ -33,7 +26,18 @@ curl https://your-deployed-url.onrender.com/lie
 }
 ```
 
-#### Get a Lie by Category
+Use it in apps, bots, landing pages, Slack integrations, or wherever you need a creative excuse!
+
+## 📚 Endpoints
+
+### Get a Random Lie
+```bash
+GET /lie
+```
+
+Returns a random lie from any category.
+
+### Get a Lie by Category
 ```bash
 GET /lie?category=tech
 ```
@@ -48,17 +52,17 @@ GET /lie?category=tech
 - `tech` - Developer lies and confessions
 - `random` - Everyday lies people tell
 
-**Example Request:**
+**Example:**
 ```bash
-curl https://your-deployed-url.onrender.com/lie?category=tech
+curl https://lies-as-a-service.onrender.com/lie?category=tech
 ```
 
-#### Get All Categories
+### Get All Categories
 ```bash
 GET /categories
 ```
 
-**Example Response:**
+**Response:**
 ```json
 {
   "categories": ["sick", "meeting", "deadline", "remote", "technical", "manager", "tech", "random"],
@@ -66,146 +70,81 @@ GET /categories
 }
 ```
 
-#### Health Check
+### Health Check
 ```bash
 GET /health
 ```
 
-Use it in apps, bots, landing pages, Slack integrations, or wherever you need a creative excuse!
+## 🛠️ Self-Hosting
 
-## 🛠️ Installation & Setup
+Want to run it yourself? It's lightweight and simple.
 
-### Local Development
+### 1. Clone this repository
 
-1. **Clone the repository**
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/your-username/lies-as-a-service.git
 cd lies-as-a-service
 ```
 
-2. **Create virtual environment**
-```bash
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-```
+### 2. Install dependencies
 
-3. **Install dependencies**
 ```bash
 pip install -r requirements.txt
 ```
 
-4. **Run the server**
+### 3. Start the server
+
 ```bash
 python main.py
 ```
 
-The API will be available at `http://localhost:8000`
+The API will be live at `http://localhost:8000`
 
-Interactive API docs at `http://localhost:8000/` (Swagger UI)
+You can also change the port using an environment variable:
 
-### 🐳 Docker Deployment
-
-#### Using Docker
 ```bash
-docker build -t lies-as-a-service .
-docker run -p 8000:8000 lies-as-a-service
-```
-
-#### Using Docker Compose
-```bash
-docker-compose up -d
-```
-
-To stop:
-```bash
-docker-compose down
+uvicorn main:app --host 0.0.0.0 --port 3000
 ```
 
 ## 📁 Project Structure
 
 ```
 lies-as-a-service/
-├── .github/
-│   └── workflows/
-│       └── docker-build.yml      # CI/CD workflow
-├── .devcontainer/
-│   └── devcontainer.json         # GitHub Codespaces config
 ├── main.py                       # FastAPI application
 ├── responses.py                  # Lie database
 ├── requirements.txt              # Python dependencies
 ├── Dockerfile                    # Docker configuration
-├── docker-compose.yml            # Docker Compose configuration
+├── docker-compose.yml            # Docker Compose
 ├── render.yaml                   # Render deployment config
-├── .dockerignore                 # Docker ignore file
-├── .gitignore                    # Git ignore file
+├── .devcontainer/
+│   └── devcontainer.json         # GitHub Codespaces config
+├── .github/workflows/
+│   └── docker-build.yml          # CI/CD workflow
 ├── LICENSE                       # MIT License
 ├── CONTRIBUTING.md               # Contribution guidelines
 └── README.md                     # This file
 ```
 
+
+
 ## 🎯 Use Cases
 
 - **Slack/Discord Bots**: Fun excuse generator commands
 - **Team Humor**: Lighten up standup meetings
-- **Excuse Generator Apps**: Build excuse-generating tools
 - **Chatbots**: Add workplace humor to your bots
 - **API Testing**: Practice API integration
 - **Icebreakers**: Share funny excuses with your team
 - **Satire Projects**: Workplace comedy applications
 
-## 🌐 Deploy to Render
-
-1. **Fork/Push this repository to GitHub**
-
-2. **Create a new Web Service on Render:**
-   - Go to [Render Dashboard](https://dashboard.render.com/)
-   - Click "New +" → "Web Service"
-   - Connect your GitHub repository
-   - Render will auto-detect the `render.yaml` configuration
-
-3. **Deploy:**
-   - Click "Create Web Service"
-   - Render will automatically build and deploy using Docker
-   - Your API will be live at `https://your-app-name.onrender.com`
-
-**Note:** Free tier on Render may spin down after inactivity. First request might take 30-60 seconds.
-
-## 🔧 Configuration
-
-### Change Port
-
-**Local:**
-```bash
-uvicorn main:app --host 0.0.0.0 --port 3000
-```
-
-**Docker:**
-```bash
-docker run -p 3000:8000 -e PORT=8000 lies-as-a-service
-```
-
-### Rate Limiting
-
-Default: 120 requests/minute per IP
-
-To modify, edit the `@limiter.limit()` decorator in `main.py`:
-```python
-@limiter.limit("60/minute")  # Change to 60 requests per minute
-```
-
 ## 📝 Adding More Lies
 
-Edit the `LIES` dictionary in `main.py`:
+Edit the `LIES` dictionary in `responses.py`:
 
 ```python
 LIES = {
     "sick": [
         "Your new excuse here",
         # ... more excuses
-    ],
-    "tech": [
-        "Your clever tech humor here",
-        # ... more witty remarks
     ],
     # Add new category
     "your_category": [
@@ -224,25 +163,31 @@ Feel free to:
 - Fix bugs
 - Enhance documentation
 
-## ⚓ GitHub Codespaces
+Check out [CONTRIBUTING.md](CONTRIBUTING.md) for more details.
 
-Open this repo in GitHub Codespaces for instant development environment:
-- Automatically configured with Python 3.11
-- All dependencies pre-installed
-- Port 8000 auto-forwarded
-- Just open and run `python main.py`
+## ⚓ Devcontainer
 
-## ⚠️ Disclaimer
+If you open this repo in GitHub Codespaces, it will automatically use `.devcontainer.json` to set up your environment. If you open it in VS Code, it will ask you if you want to reopen it in a container.
 
-This API is for **entertainment and humor purposes only**. All excuses are intentionally absurd and should not be used as actual excuses in professional settings. Use responsibly and at your own risk!
+## 🎯 Projects Using Lies as a Service
 
-## 📄 License
+Here are some projects and websites that creatively integrate lies-as-a-service:
 
-MIT License - Use it however you want, just don't actually use these excuses at work!
+**Your Project Here?**
+
+If you're using lies-as-a-service in your project, open a pull request to be featured here!
+
+---
+
+Want to use lies-as-a-service in your own project? Check the usage section in this README and start generating excuses like a pro.
 
 ## 👤 Author
 
-Built with humor and FastAPI by developers who've heard (and used) every excuse in the book
+Created with humor and FastAPI
+
+## 📄 License
+
+MIT — do whatever, just don't actually use these excuses at work.
 
 ---
 
