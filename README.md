@@ -1,6 +1,7 @@
 # Lies as a Service (LaaS)
 
 **Base URL:** `https://lies-as-a-service.onrender.com/lie`
+
 **Example(Category-Wise):** `https://lies-as-a-service.onrender.com/lie?category=tech`
 
 Ever needed a creative excuse to escape a meeting, explain a missed deadline, or justify working from home? This API generates humorous, believable workplace lies and excuses for developers and professionals.
