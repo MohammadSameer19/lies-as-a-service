@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: lies-as-a-service
+    runtime: docker
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: PORT
+        value: 8000

@@ -1,0 +1,25 @@
+name: Docker Build Test
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Build Docker image
+      run: docker build -t lies-as-a-service .
+    
+    - name: Test Docker image
+      run: |
+        docker run -d -p 8000:8000 --name test-api lies-as-a-service
+        sleep 5
+        curl -f http://localhost:8000/health || exit 1
+        curl -f http://localhost:8000/api/lie || exit 1
+        docker stop test-api
