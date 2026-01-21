@@ -8,6 +8,8 @@ Ever needed a creative excuse to escape a meeting, explain a missed deadline, or
 
 Built with FastAPI, rate limiting, and Docker support.
 
+<!-- GitAds-Verify: S86T7E7RK2UI7L5E43HBVZL29YTK1M1T -->
+
 ## API Usage
 
 **Method:** GET  
@@ -178,7 +180,7 @@ Want to use lies-as-a-service in your own project? Check the usage section in th
 
 ## 👤 Author
 
-Created with humor and FastAPI
+Created with humor and FastAPI by [https://github.com/MohammadSameer19]
 
 ## 📄 License
 
