@@ -12,7 +12,6 @@ Built with FastAPI, rate limiting, and Docker support.
 [![Sponsored by GitAds](https://gitads.dev/v1/ad-serve?source=mohammadsameer19/lies-as-a-service@github)](https://gitads.dev/v1/ad-track?source=mohammadsameer19/lies-as-a-service@github)
 
 
-
 ## API Usage
 
 **Method:** GET  
